@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin, BaseUserManager, AbstractUser
 from django.db.models.signals import post_save
 from django.utils.translation import gettext_lazy as _
+from memberships.models import Membership, UserMembership
 import random
 import string
 
@@ -15,6 +16,7 @@ class UserAccountManager(BaseUserManager):
         user = self.model(email=email, full_name=full_name, **extra_fields)
         user.set_password(password)
         user.save(using=self._db)
+
         return user
 
     def create_superuser(self, email, password=None, **extra_fields):

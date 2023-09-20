@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'djoser',
     'authentication',
+    'memberships',
     'social_django',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist'
@@ -139,9 +140,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'build/static')
-]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Default primary key field type
@@ -214,11 +212,11 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 # Jazzmin configuration #
 
 JAZZMIN_SETTINGS = {
-    "site_title": "Django & React JWT Authentication ",
-    "welcome_sign": "Hey there...welcome back",
-    "site_header": "Django & React JWT Authentication ",
-    "site_brand": "Think | Create | Inspire",
-    "copyright": "www.desphixs.com",
+    "site_title": "Nextierlab's Admin Dashboard",
+    "welcome_sign": "Welcome back!",
+    "site_header": "Nextierlab's Admin Dashboard",
+    "site_brand": "nextierlab.co",
+    "copyright": "Nextier LLC",
 }
 
 
@@ -253,6 +251,16 @@ JAZZMIN_UI_TWEAKS = {
         "success": "btn-success",
     },
 }
+
+######Stripe API######
+
+if DEBUG:
+    STRIPE_PUBLISHABLE_KEY = 'pk_test_51Ns5RWGgHVXJNitgFTXhphqy1O8ZHJDNgoOsRXVWFtavzaGKSYBinWKDVH6mH9rVkHsZymVKVUkGckuA2vvWkCvi00mf83fFif'
+    STRIPE_SECRET_KEY = 'sk_test_51Ns5RWGgHVXJNitgUnZapztP4AByZvL6IlRTorELCfB094Rf3GNVJBhhrPPZM10Jbfiyrp6pWqcNKubUbDWi3xyG00ZW203Bj8'
+
+else:
+    STRIPE_PUBLISHABLE_KEY = 'pk_test_51Ns5RWGgHVXJNitgFTXhphqy1O8ZHJDNgoOsRXVWFtavzaGKSYBinWKDVH6mH9rVkHsZymVKVUkGckuA2vvWkCvi00mf83fFif'
+    STRIPE_SECRET_KEY = 'sk_test_51Ns5RWGgHVXJNitgUnZapztP4AByZvL6IlRTorELCfB094Rf3GNVJBhhrPPZM10Jbfiyrp6pWqcNKubUbDWi3xyG00ZW203Bj8'
 
 ######################
 AUTH_USER_MODEL = 'authentication.User'
