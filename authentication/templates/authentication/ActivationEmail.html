@@ -5,10 +5,10 @@
 {% endblock subject %}
 
 {% block text_body %}
-{% blocktrans %}You're receiving this email because you need to finish activation process on {{ site_name }}.{% endblocktrans %}
+{% blocktrans %}You're receiving this email because you need to finish the activation process on NextierLab.{% endblocktrans %}
 
-{% trans "Please go to the following page to activate account:" %}
-{{ protocol }}://{{ domain }}/{{ url|safe }}
+{% trans "Please go to the following page to activate your account:" %}
+http://localhost:3000/activate/{{ uid }}/{{ token }}
 
 {% trans "Thanks for using our site!" %}
 
@@ -16,10 +16,10 @@
 {% endblock text_body %}
 
 {% block html_body %}
-<p>{% blocktrans %}You're receiving this email because you need to finish activation process on Nextierlab.{% endblocktrans %}</p>
+<p>{% blocktrans %}You're receiving this email because you need to finish the activation process on Nextierlab.{% endblocktrans %}</p>
 
 <p>{% trans "Please go to the following page to activate your account:" %}</p>
-<p><a href="{{ protocol }}://{{ domain }}/{{ url|safe }}">{{ protocol }}://{{ domain }}/{{ url|safe }}</a></p>
+<p><a href="http://localhost:3000/activate/{{ uid }}/{{ token }}">Activate</a></p>
 
 <p>{% trans "Thanks for joining us!" %}</p>
 
