@@ -93,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nextierlab_db',
         'USER': 'n_simh',
-        'PASSWORD': 'AitSy@2000',
+        'PASSWORD': 'db_password',
         'HOST': 'localhost'
     }
 }
@@ -102,8 +102,8 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'n.as09391259@gmail.com'
-EMAIL_HOST_PASSWORD = 'egspnlbwqrwvbakb'
+EMAIL_HOST_USER = 'mail@mail.mail'
+EMAIL_HOST_PASSWORD = 'generated_password'
 EMAIL_USE_TLS = True
 
 
@@ -183,6 +183,7 @@ DJOSER = {
     'SET_PASSWORD_RETYPE': True,
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     'USERNAME_RESET_CONFIRM_URL': 'email/reset/confirm/{uid}/{token}',
+    'PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND': True, 
     'ACTIVATION_URL': 'activate/{uid}/{token}',
     'SEND_ACTIVATION_EMAIL': True,
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
@@ -215,7 +216,8 @@ SOCIAL_AUTH_FACEBOOK_PROFILE_EXTRA_PARAMS = {
 # Django cors 
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Add the origin of your React app
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"  # Add the origin of your React app
 ]
 
 CORS_ALLOW_METHODS = [
@@ -272,12 +274,12 @@ JAZZMIN_UI_TWEAKS = {
 ######Stripe API######
 
 if DEBUG:
-    STRIPE_PUBLISHABLE_KEY = 'pk_test_51Ns5RWGgHVXJNitgFTXhphqy1O8ZHJDNgoOsRXVWFtavzaGKSYBinWKDVH6mH9rVkHsZymVKVUkGckuA2vvWkCvi00mf83fFif'
-    STRIPE_SECRET_KEY = 'sk_test_51Ns5RWGgHVXJNitgUnZapztP4AByZvL6IlRTorELCfB094Rf3GNVJBhhrPPZM10Jbfiyrp6pWqcNKubUbDWi3xyG00ZW203Bj8'
+    STRIPE_PUBLISHABLE_KEY = 'pk_test___'
+    STRIPE_SECRET_KEY = 'sk_test___'
 
 else:
-    STRIPE_PUBLISHABLE_KEY = 'pk_test_51Ns5RWGgHVXJNitgFTXhphqy1O8ZHJDNgoOsRXVWFtavzaGKSYBinWKDVH6mH9rVkHsZymVKVUkGckuA2vvWkCvi00mf83fFif'
-    STRIPE_SECRET_KEY = 'sk_test_51Ns5RWGgHVXJNitgUnZapztP4AByZvL6IlRTorELCfB094Rf3GNVJBhhrPPZM10Jbfiyrp6pWqcNKubUbDWi3xyG00ZW203Bj8'
+    STRIPE_PUBLISHABLE_KEY = 'pk_test___'
+    STRIPE_SECRET_KEY = 'sk_test___'
 
 ######################
 AUTH_USER_MODEL = 'authentication.User'
